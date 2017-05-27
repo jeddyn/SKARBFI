@@ -4,19 +4,21 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
-        int zestawy = scanner.nextInt();
-        if(zestawy > 0 && zestawy <= 50){
-            for(int i = 0; i < zestawy; i++){
+        int max=50,min=0;
+        int sets = scanner.nextInt();
+
+        if(sets > min && sets <= max){
+            for(int i = 0; i < sets; i++){
                 PathFinder pathFinder = new PathFinder(scanner);
-                int[] wyniki = pathFinder.znajdzSkarb();
-                wyswietlWyniki(wyniki);
+                int[] result = pathFinder.findTreasure();
+                showResult(result);
             }
         }
     }
 
-    private static void wyswietlWyniki(int[] wyniki){
-        int x = wyniki[0];
-        int y = wyniki[1];
+    private static void showResult(int[] result){
+        int x = result[0];
+        int y = result[1];
 
         if (x == 0 && y == 0) {
             System.out.println("studnia");

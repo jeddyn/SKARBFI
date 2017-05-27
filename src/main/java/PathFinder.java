@@ -15,31 +15,31 @@ public class PathFinder {
         this.scanner = scanner;
     }
 
-    public int[] znajdzSkarb(){
-        int wskazowki = scanner.nextInt();
-        if(wskazowki > 0 && wskazowki <= 100000){
-            for(int j = 0; j < wskazowki; j++){
-                int kierunek = scanner.nextInt();
-                int krok = scanner.nextInt();
-                zrobRuch(kierunek, krok);
+    public int[] findTreasure(){
+        int leads = scanner.nextInt();
+        if(leads > 0 && leads <= 100000){
+            for(int j = 0; j < leads; j++){
+                int direction = scanner.nextInt();
+                int step = scanner.nextInt();
+                makeMove(direction, step);
             }
         }
         return new int[]{x,y};
     }
 
-    private void zrobRuch(int kierunek, int krok){
-        switch (kierunek) {
+    private void makeMove(int direction, int step){
+        switch (direction) {
             case 0:
-                y += krok;
+                y += step;
                 break;
             case 1:
-                y -= krok;
+                y -= step;
                 break;
             case 2:
-                x -= krok;
+                x -= step;
                 break;
             case 3:
-                x += krok;
+                x += step;
                 break;
         }
     }
