@@ -24,7 +24,7 @@ public class PathFinder {
                 makeMove(direction, step);
             }
         }
-        return new int[]{x,y};
+        return new int[]{this.x,this.y};
     }
 
     private void makeMove(int direction, int step){
